@@ -1,0 +1,12 @@
+<h1> The show page for user <%=@user.id%> </h1>
+<br>
+First name: <%= @user.first_name %> 
+<br>
+Last name: <%= @user.last_name %>
+<br> 
+Email: <%= @user.email %>
+<br>
+<%= link_to "Home", portals_path %>
+<br>
+
+<h4> <%= link_to "Delete", portal_path(@user), method: :delete%>
