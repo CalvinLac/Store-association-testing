@@ -1,0 +1,37 @@
+<%= render "shared" %>
+
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-12" align="center">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <h1> Calvin is the Admin Portal </h1>
+          <tr>
+            <th>User.id</th>
+            <th>Street Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+            <th>Show</th>
+            <th>Edit</th>
+            <th>Delete</th>     
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |users|%>
+            <tr>
+              <td><%=users.id%></td>
+              <td><%=users.street_address%></td>
+              <td><%=users.cityname%></td>
+              <td><%=users.statename%></td>
+              <td><%=users.zip_code%></td>
+              <td><%=link_to"Show", portaladdress_path(users) %></td>
+              <td><%=link_to"Edit", edit_portaladdress_path(users)%></td>
+              <td> <%= link_to "Delete", portaladdress_path(users), method: :delete%></td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table> 
+    </div>
+  </div>
+</div>

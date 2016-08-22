@@ -13,15 +13,15 @@ class PortalproductsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @product = Product.find(params[:id]) 
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update ({:first_name => params[:user][:first_name]})
-    @user.update ({:last_name => params[:user][:last_name]})
-    @user.update ({:email => params[:user][:email]})
-    redirect_to portals_path
+    @product = Product.find(params[:id]) 
+    @product.update ({:name => params[:product][:name]})
+    @product.update ({:description => params[:product][:description]})
+    @product.update ({:price => params[:product][:price]})
+    redirect_to portalproducts_path
   end
 
   def destroy

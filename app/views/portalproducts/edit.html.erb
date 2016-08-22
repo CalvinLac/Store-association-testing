@@ -1,0 +1,6 @@
+<%= form_for @product, url: portalproduct_path(@product), html: { method: :put } do |f| %>
+  Name: <%= f.text_field :name %>
+  description: <%= f.text_area :description %>
+  price: <%= f.text_field :price, :value => "xx.xx" %> 
+  <%= f.submit %>
+<%end%>
