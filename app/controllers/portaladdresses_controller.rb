@@ -8,13 +8,8 @@ class PortaladdressesController < ApplicationController
   end
 
   def show
-    @nice = User.find_by_sql ["SELECT DISTINCT users.id, street_address, 
-      zip_code, cities.name AS CityName, states.name AS statename from users JOIN addresses ON (shipping_id=addresses.id)
-       JOIN cities ON (city_id=cities.id) JOIN states ON (state_id=states.id) 
-        ORDER BY users.id ASC"]
-    @user = User.find(params[:shipping_id])
-    @address = Address.find(params[:addres])
-    @street_address = print @nice
+    @user = User.find(params[:id])
+    @address = @user.address
   end
 
   def edit

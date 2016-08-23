@@ -5,13 +5,15 @@ First name: <%= @user.first_name %>
 Last name: <%= @user.last_name %>
 <br> 
 Email: <%= @user.email %>
+<br> 
+<% @address.each do |add| %>
+Street_address:<%= add.street_address %>
 <br>
-Street Address: <%= @street_address %>
+City: <%= add.city_id %>
 <br>
-City: 
+State: <%=add.state_id %>
 <br>
-State:
-<br>
+<%end%>
 <%= link_to "Home", portals_path %>
 <br>
 
